@@ -1,0 +1,40 @@
+AES-128-CBC Encryption:
+
+openssl enc -aes-128-cbc -in input.txt -out encrypted.enc -k "Passphrase" -md md5 -salt
+
+AES-128-CBC Decryption:
+
+openssl enc -aes-128-cbc -d -in encrypted.enc -out decrypted.txt -k "Passphrase" -md md5 -salt
+
+AES-256-CBC Encryption:
+
+openssl enc -aes-256-cbc -in input.txt -out encrypted.enc -k "Passphrase" -md sha256 -salt
+
+AES-256-CBC Decryption:
+
+openssl enc -aes-256-cbc -d -in encrypted.enc -out decrypted.txt -k "Passphrase" -md sha256 -salt
+
+AES-128-CBC Encryption (No Salt):
+
+openssl enc -aes-128-cbc -in input.txt -out encrypted.enc -k "Passphrase" -md md5 -nosalt
+
+AES-128-CBC Decryption (No Salt):
+
+openssl enc -aes-128-cbc -d -in encrypted.enc -out decrypted.txt -k "Passphrase" -md md5 -nosalt
+
+AES-256-CBC Encryption (No Salt):
+
+openssl enc -aes-256-cbc -in input.txt -out encrypted.enc -k "Passphrase" -md sha256 -nosalt
+
+AES-256-CBC Decryption (No Salt):
+
+openssl enc -aes-256-cbc -d -in encrypted.enc -out decrypted.txt -k "Passphrase" -md sha256 -nosalt
+
+Benefits & Usage Parameters:
+
+- AES-128-CBC: 128-bit key size, provides a good balance between security and performance.
+- AES-256-CBC: 256-bit key size, offers a higher level of security but may have slightly lower performance compared to AES-128-CBC.
+- MD5: A 128-bit hashing algorithm, faster but considered less secure than SHA-256.
+- SHA-256: A 256-bit hashing algorithm, slower but more secure than MD5.
+- Salt: Enhances security by adding randomness to hashed passwords, making them harder to crack through precomputed hash attacks.
+- No Salt: Faster but less secure, as it doesn't add randomness to the hashed passwords.
